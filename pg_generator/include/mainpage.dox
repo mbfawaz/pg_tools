@@ -1,0 +1,242 @@
+/*!
+\mainpage PGVS Index Page
+
+\authors Sandeep Chatterjee
+
+\authors Mohammad Fawaz
+
+\authors Zahi Moudallal
+
+\authors Abdul-Amir Yassine
+
+\date June 17, 2015
+
+\note This documentation is a work in progress.
+
+\section intro_sec Introduction
+ 
+Write introduction here
+
+\section req_sec Build System and Requirements
+
+<table class="hor-minimalist-a">
+	<tr>
+	<th>Package Name</th>
+	<th>Headers</th>
+	<th>Libraries</th>
+	<th>Comments</th>
+	</tr>
+	<tr>
+	<td><b>BLAS</b></td>
+	<td>cblas.h</td>
+	<td>libblas.so</td>
+	<td>required for dense-matrix-vector and dense matrix-matrix operations</td>
+	</tr>
+</table>
+
+\section mod_sec Modules
+
+List any modules here
+*/
+
+/*! \page faq_page FAQ page
+  \tableofcontents
+  Please note that this page is a work in progress, I will update it as and when I can.
+  
+  \section sec1 Getting Started
+  
+  \subsection question1 What do I need to compile and run the downloaded source code?
+ <p>If you get your hands on a copy of the source code, you are lucky! Now, make sure that
+  it has the following structure:</p>
+
+The list of options required by different commands is different; see individual documentation
+for details. For the sake of completion, here is a sample grid-configuration file:  
+</p>
+
+<pre>
+
+GRID_DIMENSION_X_MM = 5
+GRID_DIMENSION_Y_MM = 5
+  
+BASE_PITCH_HORIZONTAL_M1_MM = 0.09    
+BASE_PITCH_VERTICAL_M1_MM   = 0.09    
+BASE_PITCH_HORIZONTAL_M2_MM = 0.09    
+BASE_PITCH_VERTICAL_M2_MM   = 0.09    
+BASE_PITCH_HORIZONTAL_M3_MM = 0.09    
+BASE_PITCH_VERTICAL_M3_MM   = 0.09
+BASE_PITCH_HORIZONTAL_M4_MM = 0.09    
+BASE_PITCH_VERTICAL_M4_MM   = 0.09    
+BASE_PITCH_HORIZONTAL_M5_MM = 0.1    
+BASE_PITCH_VERTICAL_M5_MM   = 0.1    
+BASE_PITCH_HORIZONTAL_M6_MM = 0.1    
+BASE_PITCH_VERTICAL_M6_MM   = 0.1
+BASE_PITCH_HORIZONTAL_M7_MM = 0.03    
+BASE_PITCH_VERTICAL_M7_MM   = 0.03    
+BASE_PITCH_HORIZONTAL_M8_MM = 0.03    
+BASE_PITCH_VERTICAL_M8_MM   = 0.03    
+BASE_PITCH_HORIZONTAL_M9_MM = 0.03    
+BASE_PITCH_VERTICAL_M9_MM   = 0.03    
+
+SHEET_RESISTANCE_M1_OHM_SQ = .04
+SHEET_RESISTANCE_M2_OHM_SQ = 6.5e-03
+SHEET_RESISTANCE_M3_OHM_SQ = 6.5e-02
+SHEET_RESISTANCE_M4_OHM_SQ = 6.5e-02
+SHEET_RESISTANCE_M5_OHM_SQ = 6.5e-02
+SHEET_RESISTANCE_M6_OHM_SQ = 6.5e-02
+SHEET_RESISTANCE_M7_OHM_SQ = 2.2e-02
+SHEET_RESISTANCE_M8_OHM_SQ = 2.2e-02
+SHEET_RESISTANCE_M9_OHM_SQ = 2.2e-02
+
+C4_ARRAY_HORIZONTAL_M1_MM = 0.35 
+C4_ARRAY_VERTICAL_M1_MM   = 0.35 
+C4_ARRAY_HORIZONTAL_M2_MM = 0.35 
+C4_ARRAY_VERTICAL_M2_MM   = 0.35
+C4_ARRAY_HORIZONTAL_M3_MM = 0.35 
+C4_ARRAY_VERTICAL_M3_MM   = 0.35 
+C4_ARRAY_HORIZONTAL_M4_MM = 0.35 
+C4_ARRAY_VERTICAL_M4_MM   = 0.35 
+C4_ARRAY_HORIZONTAL_M5_MM = 0.35 
+C4_ARRAY_VERTICAL_M5_MM   = 0.35 
+C4_ARRAY_HORIZONTAL_M6_MM = 0.35 
+C4_ARRAY_VERTICAL_M6_MM   = 0.35 
+C4_ARRAY_HORIZONTAL_M7_MM = 0.35 
+C4_ARRAY_VERTICAL_M7_MM   = 0.35 
+C4_ARRAY_HORIZONTAL_M8_MM = 0.35 
+C4_ARRAY_VERTICAL_M8_MM   = 0.35 
+C4_ARRAY_HORIZONTAL_M9_MM = 0.35 
+C4_ARRAY_VERTICAL_M9_MM   = 0.35 
+
+CURRENT_DISTRIBUTION_HORIZ_M1_MM = 0.18 
+CURRENT_DISTRIBUTION_VERT_M1_MM  = 0.18 
+CURRENT_DISTRIBUTION_HORIZ_M2_MM = 0.3 
+CURRENT_DISTRIBUTION_VERT_M2_MM  = 0.3 
+CURRENT_DISTRIBUTION_HORIZ_M3_MM = 1.5 
+CURRENT_DISTRIBUTION_VERT_M3_MM  = 1.5 
+CURRENT_DISTRIBUTION_HORIZ_M4_MM = 1.5 
+CURRENT_DISTRIBUTION_VERT_M4_MM  = 1.5 
+CURRENT_DISTRIBUTION_HORIZ_M5_MM = 0.035 
+CURRENT_DISTRIBUTION_VERT_M5_MM  = 0.03 
+CURRENT_DISTRIBUTION_HORIZ_M6_MM = 0.03 
+CURRENT_DISTRIBUTION_VERT_M6_MM  = 0.03 
+CURRENT_DISTRIBUTION_HORIZ_M7_MM = 0.0333
+CURRENT_DISTRIBUTION_VERT_M7_MM  = 0.03 
+CURRENT_DISTRIBUTION_HORIZ_M8_MM = 0.05 
+CURRENT_DISTRIBUTION_VERT_M8_MM  = 0.05 
+CURRENT_DISTRIBUTION_HORIZ_M9_MM = 0.05 
+CURRENT_DISTRIBUTION_VERT_M9_MM  = 0.05 
+
+WIDTH_M1_UM = 0.8
+WIDTH_M2_UM = 0.8
+WIDTH_M3_UM = 1.0
+WIDTH_M4_UM = 1.25
+WIDTH_M5_UM = 1.25
+WIDTH_M6_UM = 1.25
+WIDTH_M7_UM = 0.18
+WIDTH_M8_UM = 0.18
+WIDTH_M9_UM = 0.18
+
+MIN_SPACING_M1_UM = 0.18
+MIN_SPACING_M2_UM = 0.18
+MIN_SPACING_M3_UM = 0.18
+MIN_SPACING_M4_UM = 0.18
+MIN_SPACING_M5_UM = 0.18
+MIN_SPACING_M6_UM = 0.18
+MIN_SPACING_M7_UM = 0.18
+MIN_SPACING_M8_UM = 0.18
+MIN_SPACING_M9_UM = 0.18
+
+TOTAL_DIE_CAPACITANCE_F   = 1e-12
+
+VDD_VOLTS                 = 1.1
+
+VIA_RESISTANCE_OHM        = .4
+
+NODE_SPLIT_RESOLUTION_UM  = 10.0
+
+BRANCH_INDUCTANCE         = 1e-12
+
+PACKAGE_CONDUCTANCE       = 0.5
+
+.end
+</pre>
+
+\subsection question2 next Question?
+
+<p>Answer 2 here </p>
+
+\subsection question3 Next next Question?
+
+<p>Answer 3 here </p>
+
+*/
+
+/*! \page download_page Download Page
+  \tableofcontents
+  This is the download page for BridgeGL. 
+  
+  \section latest_version Latest Version
+  The lastest version of the package is 1.6.
+  
+  \section downloads  Downloads 
+    <div id="wrapper">
+    <br clear="all" />
+    <div class="left45 box-sizing" style="border-left:4px solid #D91E18">
+    <a href="" style="font-size:28px, font-family: 'Roboto',sans-serif;">BGL 1.6 download</a><hr/>
+    <b>Requires:</b> GTK+2.0 or GTK+3.0 <br/>
+    <b>MD5:</b>to be determined<br/>
+    <b>Downloads:</b> Click <a href="">here</a> <br/>    
+    </div>
+    
+    <div class="left45 box-sizing" style="border-left:4px solid #D35400">
+    <a href="" style="font-size:28px, font-family: 'Roboto',sans-serif;">BGL 1.4 download</a><hr/>
+    <b>Requires:</b> GTK+2.0 or GTK+3.0 <br/>
+    <b>MD5:</b>to be determined<br/>
+    <b>Downloads:</b> Click <a href="">here</a> <br/>
+    </div>
+    
+    <div class="left45 box-sizing" style="border-left:4px solid #3A539B">
+    <a href="" style="font-size:28px, font-family: 'Roboto',sans-serif;">BGL 1.0 download</a><hr/>
+    <b>Requires:</b> GTK+2.0 <br/>
+    <b>MD5:</b>5c4ff8f46fbebdcdc7646826eed68d15<br/>
+    <b>Downloads:</b> Click <a href="">here</a> <br/>
+    </div>
+  	</div>
+  <br/>
+  
+  \section version_1_6 About Version 1.6
+  
+  
+  \section version_1_4 About Version 1.4
+  <p>Version 1.4 now supports <b>gradients, shearing transforms, rotate transforms and image maps</b>. The documentation
+  has not been fully updated yet, but the updated source code (that you will be downloading) and the <a href="FAQ.html">FAQ</a>
+	section could be referred for help.</p>
+	<p>By downloading, you agree to all terms and conditions in the GNU license. <b>Click <a href="bgl_1.4.tar.gz">here</a> to download</b>. 
+	Check your download by comparing the md5sum, which was <b>e6028410f806a55078662dbe1d5cfc08</b>	at the time of uploading. The 
+	<i>bgl_1.4.tar.gz</i> file includes:</p>
+	<ol>
+	<li><em>bgl_graphics.h</em>, the header file of the graphics package</li>
+	<li><em>bgl_graphics.cpp</em>, the source file of the graphics package</li>
+	<li><em>application.cpp</em>, an example file to demostrate the graphics package. The ouput is as shown <a href="user_interface.html#application">here</a></li>
+	<li><em>makefile</em>, a sample makefile, that can be used to complile the demonstration.</li>
+	<li><em>logo.png</em>, a .png. file, which is the logo for BridgeGL.</li>
+	<li><em>gpl.txt</em>, the GNU public license.</li>
+	<li><em>icons</em>, a folder of icon sets used in the UI.</li>
+	<li><em>codes.txt</em>, a file that contains the text to be shown (in text-balloons) when the an image-map is clicked.</li>
+	</ol>
+	</p>
+  
+  \section version_1_0 About Version 1.0
+  <p>By downloading, you agree to all terms and conditions in the GNU license. Click <a href="bgl_v1.0.zip">here</a> to dowload. 
+  Check your download by comparing the md5sum, which was <b>5c4ff8f46fbebdcdc7646826eed68d15</b>	at the time of uploading. The 
+	<i>bgl_v1.0.zip</i> file includes:</p>
+	<ol>
+	<li><em>bgl_graphics.h</em>, the header file of the graphics package</li>
+	<li><em>bgl_graphics.cpp</em>, the source file of the graphics package</li>
+	<li><em>application.cpp</em>, an example file to demostrate the graphics package, may be updated in future.</li>
+	<li><em>makefile</em>, a sample makefile.</li>
+	<li><em>logo.png</em>, a .png. file, which is the logo for BridgeGL.</li>
+	<li><em>gpl.txt</em>, the GNU public license.</li>
+	</ol>
+ </p>
+  
+*/
